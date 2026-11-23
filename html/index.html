@@ -1,43 +1,502 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog do Diggo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-    <h1>Hello, world!</h1>
+    <link rel="icon" href="../img/capa.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
+      crossorigin="anonymous"
+    />
 
-    <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #f5eee6;
+      }
+
+      /* cor do menu e do rodape */
+      .navbar,
+      footer {
+        background-color: #6b1d1d;
+      }
+
+      h2 {
+        color: #6b1d1d;
+      }
+
+      /* tamanho das imagens dos cards */
+      .capa {
+        height: 300px;
+        object-fit: cover;
+      }
+
+      /* todos os slides do carrossel com o mesmo tamanho */
+      .carousel-item {
+        height: 520px;
+      }
+
+      .carousel-item .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .carousel-item .row {
+        width: 100%;
+      }
+
+      .carousel-item img {
+        max-height: 340px;
+      }
+
+      /* no celular o slide fica mais alto porque a imagem vai embaixo do texto */
+      @media (max-width: 767px) {
+        .carousel-item {
+          height: 600px;
+        }
+
+        .carousel-item img {
+          max-height: 220px;
+        }
+      }
+
+      /* efeito de transicao nos cards e botoes */
+      .card,
+      .btn {
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+      <div class="container">
+        <!-- logo -->
+        <a class="navbar-brand" href="#inicio">
+          <img src="../img/capa.png" alt="Logo do blog" width="40" /> Blog do
+          Diggo
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Página Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#topicos">Tópicos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CARROSSEL -->
+    <section id="inicio">
+      <div
+        id="carrossel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carrossel"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carrossel"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carrossel"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active bg-danger text-white">
+            <div class="container py-5">
+              <div class="row align-items-center">
+                <div class="col-md-8 text-center text-md-start">
+                  <h1>Cada livro é uma nova viagem.</h1>
+                  <p>
+                    Resenhas, recomendações e opiniões de quem ama histórias.
+                  </p>
+                  <a href="#sobre" class="btn btn-warning">Mais informações</a>
+                </div>
+                <div class="col-6 col-md-3 mx-auto mt-4 mt-md-0">
+                  <img
+                    src="../img/cabecadosanto.jpg"
+                    class="img-fluid rounded"
+                    alt="Capa do livro A Cabeça do Santo"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item bg-dark text-white">
+            <div class="container py-5">
+              <div class="row align-items-center">
+                <div class="col-md-8 text-center text-md-start">
+                  <h1>5 livros de suspense</h1>
+                  <p>Histórias que prendem do começo ao fim.</p>
+                  <a href="#topicos" class="btn btn-warning"
+                    >Mais informações</a
+                  >
+                </div>
+                <div class="col-6 col-md-3 mx-auto mt-4 mt-md-0">
+                  <img
+                    src="../img/ultracarnem.jpg"
+                    class="img-fluid rounded"
+                    alt="Capa do livro Ultra Carnem"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item bg-secondary text-white">
+            <div class="container py-5">
+              <div class="row align-items-center">
+                <div class="col-md-8 text-center text-md-start">
+                  <h1>Livros que viraram filmes</h1>
+                  <p>Adaptações famosas do mundo literário para o cinema.</p>
+                  <a href="#contato" class="btn btn-warning"
+                    >Mais informações</a
+                  >
+                </div>
+                <div class="col-6 col-md-3 mx-auto mt-4 mt-md-0">
+                  <img
+                    src="../img/devoradores.jpg"
+                    class="img-fluid rounded"
+                    alt="Capa do livro Devoradores de Estrelas"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carrossel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carrossel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Sobre o blog</h2>
+        <div class="row align-items-center">
+          <div class="col-8 col-md-4 mx-auto mb-4">
+            <img
+              src="../img/rodrigo.jpg"
+              class="img-fluid rounded-circle"
+              alt="Foto do Rodrigo"
+            />
+          </div>
+          <div class="col-md-8">
+            <p>
+              Oi! Meu nome é Rodrigo e este blog nasceu da minha paixão por
+              livros e histórias que conseguem marcar a gente de alguma forma.
+            </p>
+
+            <!-- texto que abre e fecha com transicao -->
+            <button
+              class="btn btn-danger mb-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#leiaMais"
+            >
+              Leia mais
+            </button>
+            <div class="collapse" id="leiaMais">
+              <p>
+                Criei este espaço para compartilhar opiniões, resenhas,
+                recomendações e experiências como leitor, e para trocar
+                indicações com outros leitores.
+              </p>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-4">
+                <div class="card p-2">
+                  <h3>3</h3>
+                  <p class="mb-0">postagens</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">
+                  <h3>1</h3>
+                  <p class="mb-0">resenha completa</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">
+                  <h3>6</h3>
+                  <p class="mb-0">categorias</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPICOS (cards) -->
+    <section id="topicos" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-4">Tópicos do blog</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img
+                src="../img/cabecadosanto.jpg"
+                class="card-img-top capa"
+                alt="Capa do livro A Cabeça do Santo"
+              />
+              <div class="card-body">
+                <span class="badge bg-secondary">Romance</span>
+                <span class="badge bg-secondary">Fantasia</span>
+                <h5 class="card-title mt-2">A Cabeça do Santo</h5>
+                <p class="card-text">
+                  Uma resenha sobre o livro de Socorro Acioli e seus elementos
+                  de realismo fantástico.
+                </p>
+                <p class="card-text"><b>Nota: 4,5/5</b></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img
+                src="../img/ultracarnem.jpg"
+                class="card-img-top capa"
+                alt="Capa do livro Ultra Carnem"
+              />
+              <div class="card-body">
+                <span class="badge bg-secondary">Suspense</span>
+                <span class="badge bg-secondary">Terror</span>
+                <h5 class="card-title mt-2">5 livros de suspense</h5>
+                <p class="card-text">
+                  Histórias que prendem do começo ao fim e vão te deixar sem
+                  conseguir parar de ler.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img
+                src="../img/devoradores.jpg"
+                class="card-img-top capa"
+                alt="Capa do livro Devoradores de Estrelas"
+              />
+              <div class="card-body">
+                <span class="badge bg-secondary">Ficção Científica</span>
+                <h5 class="card-title mt-2">Livros que viraram filmes</h5>
+                <p class="card-text">
+                  Confira adaptações famosas do mundo literário para o cinema.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO (formulario) -->
+    <section id="contato" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Fale comigo</h2>
+
+        <form id="formulario" class="col-md-8 mx-auto">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              placeholder="Digite seu nome"
+            />
+            <div class="invalid-feedback">Digite pelo menos 3 letras.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              placeholder="seuemail@exemplo.com"
+            />
+            <div class="invalid-feedback">Digite um e-mail válido.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea
+              class="form-control"
+              id="mensagem"
+              rows="5"
+              placeholder="Escreva sua mensagem"
+            ></textarea>
+            <div class="invalid-feedback">
+              A mensagem precisa ter pelo menos 10 letras.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-danger w-100">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- RODAPE -->
+    <footer class="text-white text-center py-4">
+      <div class="container">
+        <h5>Blog do Diggo</h5>
+        <p>
+          Contato:
+          <a href="mailto:rodrigodelimacardoso4@gmail.com" class="text-white"
+            >rodrigodelimacardoso4@gmail.com</a
+          >
+          | Instagram:
+          <a
+            href="https://instagram.com/diggopfz"
+            target="_blank"
+            class="text-white"
+            >@diggopfz</a
+          >
+        </p>
+        <p class="mb-0">
+          © 2026 Rodrigo Cardoso. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- MODAL de sucesso -->
+    <div class="modal fade" id="modalSucesso" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Tudo certo!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Mensagem enviada com sucesso! Obrigado pelo contato.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var formulario = document.getElementById("formulario");
+
+      formulario.addEventListener("submit", function (evento) {
+        // nao deixa a pagina recarregar
+        evento.preventDefault();
+
+        var nome = document.getElementById("nome");
+        var email = document.getElementById("email");
+        var mensagem = document.getElementById("mensagem");
+        var tudoCerto = true;
+
+        // valida o nome
+        if (nome.value.length < 3) {
+          nome.classList.add("is-invalid");
+          tudoCerto = false;
+        } else {
+          nome.classList.remove("is-invalid");
+        }
+
+        // valida o email
+        if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
+          email.classList.add("is-invalid");
+          tudoCerto = false;
+        } else {
+          email.classList.remove("is-invalid");
+        }
+
+        // valida a mensagem
+        if (mensagem.value.length < 10) {
+          mensagem.classList.add("is-invalid");
+          tudoCerto = false;
+        } else {
+          mensagem.classList.remove("is-invalid");
+        }
+
+        // se estiver tudo certo abre o modal e limpa o formulario
+        if (tudoCerto == true) {
+          var modal = new bootstrap.Modal(
+            document.getElementById("modalSucesso"),
+          );
+          modal.show();
+          formulario.reset();
+        }
+      });
+    </script>
   </body>
 </html>
