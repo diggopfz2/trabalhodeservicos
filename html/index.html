@@ -21,7 +21,6 @@
         background-color: #f5eee6;
       }
 
-      /* cor do menu e do rodape */
       .navbar,
       footer {
         background-color: #6b1d1d;
@@ -31,13 +30,11 @@
         color: #6b1d1d;
       }
 
-      /* tamanho das imagens dos cards */
       .capa {
         height: 300px;
         object-fit: cover;
       }
 
-      /* todos os slides do carrossel com o mesmo tamanho */
       .carousel-item {
         height: 520px;
       }
@@ -56,7 +53,6 @@
         max-height: 340px;
       }
 
-      /* no celular o slide fica mais alto porque a imagem vai embaixo do texto */
       @media (max-width: 767px) {
         .carousel-item {
           height: 600px;
@@ -67,7 +63,6 @@
         }
       }
 
-      /* efeito de transicao nos cards e botoes */
       .card,
       .btn {
         transition: 0.3s;
@@ -80,7 +75,7 @@
   </head>
 
   <body>
-    <!-- MENU -->
+    <!-- menu -->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
       <div class="container">
         <!-- logo -->
@@ -115,7 +110,7 @@
       </div>
     </nav>
 
-    <!-- CARROSSEL -->
+    <!-- carrossel -->
     <section id="inicio">
       <div
         id="carrossel"
@@ -225,7 +220,7 @@
       </div>
     </section>
 
-    <!-- SOBRE -->
+    <!-- sobre -->
     <section id="sobre" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Sobre o blog</h2>
@@ -243,7 +238,7 @@
               livros e histórias que conseguem marcar a gente de alguma forma.
             </p>
 
-            <!-- texto que abre e fecha com transicao -->
+            <!-- texto transiçao  -->
             <button
               class="btn btn-danger mb-3"
               type="button"
@@ -285,7 +280,7 @@
       </div>
     </section>
 
-    <!-- TOPICOS (cards) -->
+    <!-- cards -->
     <section id="topicos" class="py-5 bg-white">
       <div class="container">
         <h2 class="text-center mb-4">Tópicos do blog</h2>
@@ -305,11 +300,9 @@
                   Uma resenha sobre o livro de Socorro Acioli e seus elementos
                   de realismo fantástico.
                 </p>
-                <p class="card-text"><b>Nota: 4,5/5</b></p>
               </div>
             </div>
           </div>
-
           <div class="col-md-4 mb-4">
             <div class="card h-100">
               <img
@@ -349,7 +342,7 @@
       </div>
     </section>
 
-    <!-- CONTATO (formulario) -->
+    <!-- formulario -->
     <section id="contato" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Fale comigo</h2>
@@ -395,7 +388,7 @@
       </div>
     </section>
 
-    <!-- RODAPE -->
+    <!-- rodape -->
     <footer class="text-white text-center py-4">
       <div class="container">
         <h5>Blog do Diggo</h5>
@@ -418,7 +411,7 @@
       </div>
     </footer>
 
-    <!-- MODAL de sucesso -->
+    <!-- modal de sucesso -->
     <div class="modal fade" id="modalSucesso" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
